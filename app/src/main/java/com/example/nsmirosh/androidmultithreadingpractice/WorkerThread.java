@@ -13,8 +13,12 @@ public class WorkerThread extends Thread {
 
     int mThreadNumber;
 
+    boolean mIsProducer;
 
-    public WorkerThread(ExecutionListener executionListener, int ThreadNumber) {
+
+    public WorkerThread(boolean isProducer, ExecutionListener executionListener, int ThreadNumber) {
+
+        mIsProducer = isProducer;
         mListener = executionListener;
         mThreadNumber = ThreadNumber;
     }
@@ -30,12 +34,19 @@ public class WorkerThread extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        mListener.onExecuted(mThreadNumber);
+        if (mIsProducer) {
+            mListener.onProducerExecuted(mThreadNumber);
+        }
+        else {
+            mListener.onConsumerExecuted(mThreadNumber);
+        }
     }
+
 
 
     interface ExecutionListener {
 
-        void onExecuted(int threadNumber);
+        void onConsumerExecuted(int threadNumber);
+        void onProducerExecuted(int threadNumber);
     }
 }

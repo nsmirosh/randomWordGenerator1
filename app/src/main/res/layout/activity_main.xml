@@ -3,31 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.example.nsmirosh.androidmultithreadingpractice.MainActivity">
-
-    <TextView
-        android:id="@+id/start_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start the proccess" />
-
-
-    <TextView
-        android:id="@+id/amount_of_threads_in_work_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-
 
 
     <TextView
         android:id="@+id/generated_text_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/current_working_thread_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/producer_threads_in_work_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Producer threads"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/consumer_threads_in_work_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consumer threads"
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start_producing_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start producing" />
+
+        <Button
+            android:id="@+id/start_consuming_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start consuming" />
+
+
+        <Button
+            android:id="@+id/clear_btn"
+            android:layout_width="wrap_content"
+            android:text="Clear"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
